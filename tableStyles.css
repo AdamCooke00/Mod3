@@ -1,0 +1,24 @@
+#tableSpace{
+    width: 80%; 
+}
+
+#numberingBar{
+    width: 7%;
+    
+}
+
+#eventBar{
+    width: 13%;
+    float: left;
+    
+}
+
+.dayColumn{
+    width: 12.5%;
+}
+
+.timeSlot{
+    width: 100%;
+    padding-bottom: 5%;
+    background-color: red;
+}
