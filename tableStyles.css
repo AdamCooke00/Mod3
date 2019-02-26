@@ -1,24 +1,31 @@
 #tableSpace{
-    width: 80%; 
+    width: 80%;
+    float: left;
 }
 
 #numberingBar{
     width: 7%;
-    
+    float: left;
+
 }
 
 #eventBar{
     width: 13%;
     float: left;
-    
+
 }
 
 .dayColumn{
     width: 12.5%;
+    float: left;
 }
 
 .timeSlot{
     width: 100%;
-    padding-bottom: 5%;
-    background-color: red;
+    padding-bottom: 30%;
+    border: 1px solid rgb(131, 100, 100);
+}
+
+#pageMargin{
+    margin: 20px 0px;
 }
