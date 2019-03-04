@@ -1,17 +1,12 @@
-
-
 	var buttons = document.querySelectorAll("button");
 
-
-	$(".list").on("click", "button", function(){
-	// $(this).toggleClass("select");		
+	//button click
+$(".list").on("click", "button", function(){
+	$(this).toggleClass("select");		
 	$(this).parent().siblings().children(".add").toggleClass("exclude")
 	});
 
-
-
-
-
+	//input create new buttons
 $("input[type='text']").keypress(function(event){
 	if (event.which === 13) {
 		var todoText = $(this).val();
@@ -20,6 +15,7 @@ $("input[type='text']").keypress(function(event){
 	}
 });
 
+	//button delete
 $(".list").on("click", "span", function(event){
 $(this).parent().parent().fadeOut(500,function(){
 	$(this).remove();
@@ -27,6 +23,7 @@ $(this).parent().parent().fadeOut(500,function(){
 event.stopPropagation();
 });
 
+	//hide input 
 $(".fa-plus").click(function(){
 	$("input[type='text']").fadeToggle();
 });
