@@ -21,7 +21,7 @@ $("input[type='text']").keypress(function(event){
 });
 
 $(".list").on("click", "span", function(event){
-$(this).parent().fadeOut(500,function(){
+$(this).parent().parent().fadeOut(500,function(){
 	$(this).remove();
 });
 event.stopPropagation();
