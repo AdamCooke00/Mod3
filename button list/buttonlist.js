@@ -4,6 +4,9 @@
 $(".list").on("click", "button", function(){
 	$(this).toggleClass("select");		
 	$(this).parent().siblings().children(".add").toggleClass("exclude")
+	$(this).parent().siblings().children(".add").toggle(function(){
+	$(this).attr("disabled");
+	});
 	});
 
 	//input create new buttons
