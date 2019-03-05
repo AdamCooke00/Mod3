@@ -3,18 +3,20 @@
 	//button click
 $(".list").on("click", "button", function(){
 	$(this).toggleClass("select");		
-	$(this).parent().siblings().children(".add").toggleClass("exclude")
-	$(this).parent().siblings().children(".add").toggle(function(){
-	$(this).attr("disabled");
-	});
-	});
+	$(this).parent().siblings().children(".add").toggleClass("exclude");
+	$(this).draggable({cancel:false},{ cursor: "crosshair", revert: "invalid"});
+	$(this).parent().siblings().children(".add").toggle(100);
+	//$(this).parent().siblings().children(".add").toggle(function(){
+	//$(this).attr("disabled");
+	//});
+});
 
 	//input create new buttons
 $("input[type='text']").keypress(function(event){
 	if (event.which === 13) {
 		var todoText = $(this).val();
 		$(this).val("");
-		$(".list").append("<div><button class=\"add\"><span><i class=\"fa fa-trash\"></i></span> " + todoText + "</button></div>");
+		$(".list").append("<div class=\"origin\"><button class=\"add\"><span><i class=\"fa fa-trash\"></i></span> " + todoText + "</button></div>");
 	}
 });
 
@@ -31,6 +33,37 @@ $(".fa-plus").click(function(){
 	$("input[type='text']").fadeToggle();
 });
 
+//drag and drop function
+$(".drop").droppable({ accept: ".add", 
+           drop: function(event, ui) {
+                    console.log("drop");
+                   $(this).removeClass("border").removeClass("over");
+             var dropped = ui.draggable;
+            var droppedOn = $(this);
+            $(dropped).detach().css({top: 0,left: 0}).appendTo(droppedOn);      
+             
+             
+                }, 
+          over: function(event, elem) {
+                  $(this).addClass("over");
+                   console.log("over");
+          }
+                ,
+                  out: function(event, elem) {
+                    $(this).removeClass("over");
+                  }
+                     });
+$(".drop").sortable();
+
+$(".origin").droppable({ accept: ".add", drop: function(event, ui) {
+                    console.log("drop");
+                   $(this).removeClass("border").removeClass("over");
+             var dropped = ui.draggable;
+            var droppedOn = $(this);
+            $(dropped).detach().css({top: 0,left: 0}).appendTo(droppedOn);      
+             
+             
+                }});
 // var colors = ['#ff0000', '#00ff00', '#0000ff'];
 // var random_color = colors[Math.floor(Math.random() * colors.length)];
 // $("button").css('color', random_color);
