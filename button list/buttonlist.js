@@ -1,10 +1,12 @@
 	var buttons = document.querySelectorAll("button");
 
-	//button click
+	//button click function
 $(".list").on("click", "button", function(){
 	$(this).toggleClass("select");		
 	$(this).parent().siblings().children(".add").toggleClass("exclude");
-	$(this).draggable({cancel:false},{ cursor: "crosshair", revert: "invalid"});
+	//make the button draggable
+	$(this).draggable({cancel:false, cursor: "crosshair", revert: "invalid"});
+	//hide other buttons when button is clicked
 	$(this).parent().siblings().children(".add").toggle(100);
 	//$(this).parent().siblings().children(".add").toggle(function(){
 	//$(this).attr("disabled");
@@ -16,11 +18,12 @@ $("input[type='text']").keypress(function(event){
 	if (event.which === 13) {
 		var todoText = $(this).val();
 		$(this).val("");
+		//Send New buttons to the html 
 		$(".list").append("<div class=\"origin\"><button class=\"add\"><span><i class=\"fa fa-trash\"></i></span> " + todoText + "</button></div>");
 	}
 });
 
-	//button delete
+	//button delete function
 $(".list").on("click", "span", function(event){
 $(this).parent().parent().fadeOut(500,function(){
 	$(this).remove();
@@ -28,12 +31,14 @@ $(this).parent().parent().fadeOut(500,function(){
 event.stopPropagation();
 });
 
-	//hide input 
+	//hide input box
 $(".fa-plus").click(function(){
 	$("input[type='text']").fadeToggle();
 });
 
-//drag and drop function
+//drag and drop function 
+//I have no idea what these codes meean
+// I just copied from others and made some changes 
 $(".drop").droppable({ accept: ".add", 
            drop: function(event, ui) {
                     console.log("drop");
@@ -64,22 +69,3 @@ $(".origin").droppable({ accept: ".add", drop: function(event, ui) {
              
              
                 }});
-// var colors = ['#ff0000', '#00ff00', '#0000ff'];
-// var random_color = colors[Math.floor(Math.random() * colors.length)];
-// $("button").css('color', random_color);
-// buttons[0].style.backgroundColor = random_color; 
- // $(document).ready(function()	
- //            {
- //                var myColors = new Array();
- //                myColors[0] = "#2672EC";
- //                myColors[1] = "#97009F";
- //                myColors[2] = "#094DB5";
- //                myColors[3] = "#00A300";
- //                myColors[4] = "#DA532C";
- //                myColors[5] = "#AF1A3F";
- //                myColors[6] = "#613CBC";
- //                myColors[7] = "#008AD2";
-
- //                var rand = Math.floor(Math.random()*myColors.length); 
- //                $('button').css("background-color", myColors[rand]); 
- //            });
