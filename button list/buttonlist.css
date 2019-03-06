@@ -20,8 +20,8 @@ button{
 	font-family: Roboto;
 	width: 120px;
 	height: 50px;
-	/*background: grey;
-	color: white;*/
+	background: grey;
+	color: white;
 	}
 input:focus{
 	background: #fff;
