@@ -30,6 +30,17 @@
     border: 1px solid rgb(131, 100, 100);
 }
 
-#pageMargin{
-    margin: 20px 0px;
+#dateScroll{
+    width: 79%;
+    height: 30px;
+    background-color: cadetblue;
+    position: fixed;
+}
+
+#timetable{
+    margin-top: 30px;
+}
+
+#timeColumn{
+    background-color: gray;
 }
