@@ -22,12 +22,20 @@ $("input[type='text']").keypress(function(event){
 	}
 });
 	
-	//Delete button function
+	//Delete button function in the list
 $(".list").on("click", "span", function(event){
 $(this).parent().parent().fadeOut(500,function(){
 	$(this).remove();
 });
 event.stopPropagation();
+});
+
+  //Delete button function in the timetable
+$("#timetable").on("click", "span", function(event){
+  $(this).parent().parent().fadeOut(500,function(){
+    $(this).remove();
+  });
+  event.stopPropagation();
 });
 
 	//Hide input function
