@@ -1,17 +1,19 @@
 var buttons = document.querySelectorAll("button");
      //button click function
     
-$(".list").on("click", "button", function(){
-	$(this).toggleClass("select");		
+
+     $(this).draggable({cancel:false ,cursor: "crosshair", revert: "invalid"});
+// $(".list").on("click", "button", function(){
+// 	$(this).toggleClass("select");		
 	// $(this).parent().siblings().children(".add").toggleClass("exclude");
 	// $(this).children().children(".fa fa-trash").toggleAttr("class","fa fa-check","fa fa-trash");
-	$(this).draggable({cancel:false ,cursor: "crosshair", revert: "invalid"});
+	
 	// $(this).toggle(function(){
 	// 	$(this).draggable({cancel:false},{ cursor: "crosshair", revert: "invalid"});
 	// });
 	// $(this).parent().siblings().children(".add").toggle(100);
 	// $(this).attr("disabled");
-});
+// });
 
 	//Input enter create buttons
 $("input[type='text']").keypress(function(event){
