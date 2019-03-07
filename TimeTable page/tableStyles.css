@@ -46,7 +46,7 @@
 }
 /*Button style code */
 h1 {
-    width: 124.25px;
+    width: 122.25px;
     height: 80px;
     font-family: Roboto;
     background: #2980b9;
@@ -59,8 +59,8 @@ h1 {
 }
 button{
     font-family: Roboto;
-    width: 124.25px;
-    height: 48px;
+    width: 122.25px;
+    height: 46px;
     color: black;
     }
 input:focus{
@@ -69,8 +69,8 @@ input:focus{
     outline: none;
 }
 input{
-    width: 124.25px;
-    height: 48px;
+    width: 122.25px;
+    height: 46px;
     box-sizing: border-box;
     padding: 13px 13px 13px 5px;
 }
