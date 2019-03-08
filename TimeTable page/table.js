@@ -45,6 +45,14 @@ $("#timetable").on("click", "span", function(event){
 $(".fa-plus").click(function(){
 	$("input[type='text']").fadeToggle();
 });
+
+  //Refresh function
+$(".fa-refresh").click(function(){
+  $(".list").find(".origin").remove();
+  $(".list").append("<div class=\"origin\"><button class=\"add\"><span><i class=\"fa fa-trash\"></i></span>Eat</button></div><div class=\"origin\"><button class=\"add\"><span><i class=\"fa fa-trash\"></i></span>Workout</button></div><div class=\"origin\"><button class=\"add\"><span><i class=\"fa fa-trash\"></i></span>Sleep</button></div><div class=\"origin\"><button class=\"add\"><span><i class=\"fa fa-trash\"></i></span>Laundry</button></div><div class=\"origin\"><button class=\"add\"><span><i class=\"fa fa-trash\"></i></span>Study</button></div>");
+  $("button").draggable({cancel:false ,cursor: "crosshair", revert: "invalid"});
+});
+
   //drag and drop components
 // $(".add").draggable({ cursor: "crosshair", revert: "invalid"});
 $(".timeSlot").droppable({ accept: ".add", 
