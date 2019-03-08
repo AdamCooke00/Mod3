@@ -2,7 +2,7 @@ var buttons = document.querySelectorAll("button");
      //button click function
     
 
-     $(this).draggable({cancel:false ,cursor: "crosshair", revert: "invalid"});
+     $("button").draggable({cancel:false ,cursor: "crosshair", revert: "invalid"});
 // $(".list").on("click", "button", function(){
 // 	$(this).toggleClass("select");		
 	// $(this).parent().siblings().children(".add").toggleClass("exclude");
@@ -21,7 +21,7 @@ $("input[type='text']").keypress(function(event){
 		var todoText = $(this).val();
 		$(this).val("");
 		$(".list").append("<div class=\"origin\"><button class=\"add\"><span><i class=\"fa fa-trash\"></i></span> " + todoText + "</button></div>");
-    $(this).draggable({cancel:false ,cursor: "crosshair", revert: "invalid"});
+    $("button").draggable({cancel:false ,cursor: "crosshair", revert: "invalid"});
   }
 });
 	
