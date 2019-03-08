@@ -21,7 +21,8 @@ $("input[type='text']").keypress(function(event){
 		var todoText = $(this).val();
 		$(this).val("");
 		$(".list").append("<div class=\"origin\"><button class=\"add\"><span><i class=\"fa fa-trash\"></i></span> " + todoText + "</button></div>");
-	}
+    $(this).draggable({cancel:false ,cursor: "crosshair", revert: "invalid"});
+  }
 });
 	
 	//Delete button function in the list
