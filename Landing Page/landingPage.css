@@ -1,0 +1,107 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+  
+#sidebar, #content {
+    height: 100%;
+    overflow:auto;
+    float:left;
+}
+  
+#sidebar {
+    /* background: #57005E; */
+    background-image: linear-gradient(purple,#57005E);
+    width: 20%;
+    display: flex;
+}
+
+#content {
+    background: url("clock background.jpg");
+    /*background: url(http://66.media.tumblr.com/cca1e790be9930466b44867728a561d2/tumblr_mj3r8dQqy61qcdtsho1_1280.jpg);*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 80%;
+}
+
+.parent {
+    width: 90%;
+}
+
+#logo {
+    margin: 15px auto 15px auto;
+    display: block;
+    max-width:300px;
+    max-height:300px;
+    width: 60%;
+    height: auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 4em;
+    color: #57005E;
+    word-wrap: break-word;
+}
+
+h2 {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    color: #57005E;
+    font-weight: 800em;
+    text-shadow: 2px 2px 8px black;
+}
+
+.number {
+    background-image: radial-gradient(circle, #D8D8D8, #777777);
+    border: 2px solid #A8A8A8;
+    height: 100px;
+    line-height: 100px;
+    width: 50%;
+    margin: 15% auto 15% auto;
+    text-align: center;
+    border-radius: 10px;
+}
+.number a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    float: left;
+    font-size: 2em;
+    color: black;
+    text-decoration: none;
+}
+video {
+    width: 100%;
+    height: auto;
+    border: 4px solid #A8A8A8;
+}
+p {
+    width: 50%;
+    margin: 15px auto 15px auto;
+}
+#buttons {
+    float: left;
+    width: 100%;
+}
+.continue {
+    background-image: radial-gradient(circle, purple, #57005E);
+    border: 2px solid purple;
+    height: 80px;
+    line-height: 80px;
+    width: 30%;
+    margin: 15px 10% 15px 10%;
+    text-align: center;
+    border-radius: 10px;
+}
+.continue a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    float: left;
+    font-size: 2em;
+    color: #A8A8A8;
+    text-decoration: none;
