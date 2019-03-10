@@ -58,13 +58,13 @@ h1 {
     font-weight: normal;
     text-align: center;
 }
-}
+
 button{
     font-family: Roboto;
     width: 122.25px;
     height: 46px;
     color: black;
-    }
+}
 input:focus{
     background: #fff;
     border:3px solid purple;
