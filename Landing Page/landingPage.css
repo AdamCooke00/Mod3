@@ -14,7 +14,7 @@ html, body {
 #sidebar {
     /* background: #57005E; */
     background-image: linear-gradient(purple,#57005E);
-    width: 20%;
+    width: 10%;
     display: flex;
 }
 
@@ -23,7 +23,7 @@ html, body {
     /*background: url(http://66.media.tumblr.com/cca1e790be9930466b44867728a561d2/tumblr_mj3r8dQqy61qcdtsho1_1280.jpg);*/
     background-repeat: no-repeat;
     background-size: cover;
-    width: 80%;
+    width: 90%;
 }
 
 .parent {
@@ -44,6 +44,7 @@ h1 {
     font-size: 4em;
     color: #57005E;
     word-wrap: break-word;
+    margin: 0;
 }
 
 h2 {
@@ -53,6 +54,7 @@ h2 {
     color: #57005E;
     font-weight: 800em;
     text-shadow: 2px 2px 8px black;
+    margin: 15px;
 }
 
 .number {
@@ -90,12 +92,13 @@ p {
 .continue {
     background-image: radial-gradient(circle, purple, #57005E);
     border: 2px solid purple;
-    height: 80px;
-    line-height: 80px;
-    width: 30%;
-    margin: 15px 10% 15px 10%;
+    height: 60px;
+    line-height: 60px;
+    width: 300px;
+    margin: 15px auto 15px auto;
     text-align: center;
     border-radius: 10px;
+    font-size: 0.8em;
 }
 .continue a {
     display: block;
