@@ -22,7 +22,7 @@ event.stopPropagation();
 
   //Delete button function in the timetable
 $("#timetable").on("click", "span", function(event){
-  $(this).parent().parent().fadeOut(500,function(){
+  $(this).parent().fadeOut(500,function(){
     $(this).remove();
   });
   event.stopPropagation();
