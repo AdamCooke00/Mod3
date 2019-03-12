@@ -14,7 +14,7 @@ $("input[type='text']").keypress(function(event){
 	
 	//Delete button function in the event list
 $(".list").on("click", "span", function(event){
-$(this).parent().parent().fadeOut(500,function(){
+$(this).parent().fadeOut(500,function(){
 	$(this).remove();
 });
 event.stopPropagation();
