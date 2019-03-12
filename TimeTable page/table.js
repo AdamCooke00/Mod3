@@ -1,31 +1,18 @@
-var buttons = document.querySelectorAll("button");
-     //button click function
-    
+//Give draggable function to all buttons
+  $("button").draggable({cancel:false ,cursor: "crosshair", revert: "invalid"});
 
-     $("button").draggable({cancel:false ,cursor: "crosshair", revert: "invalid"});
-// $(".list").on("click", "button", function(){
-// 	$(this).toggleClass("select");		
-	// $(this).parent().siblings().children(".add").toggleClass("exclude");
-	// $(this).children().children(".fa fa-trash").toggleAttr("class","fa fa-check","fa fa-trash");
-	
-	// $(this).toggle(function(){
-	// 	$(this).draggable({cancel:false},{ cursor: "crosshair", revert: "invalid"});
-	// });
-	// $(this).parent().siblings().children(".add").toggle(100);
-	// $(this).attr("disabled");
-// });
 
-	//Input enter create buttons
+	//Customize events(create new event buttons by typing text in the input box)
 $("input[type='text']").keypress(function(event){
 	if (event.which === 13) {
 		var todoText = $(this).val();
 		$(this).val("");
-		$(".list").append("<div class=\"origin\"><button class=\"add\"><span><i class=\"fa fa-trash\"></i></span> " + todoText + "</button></div>");
+		$(".list").append("<div class=\"origin\"><button class=\"add btn btn-secondary\"><span><i class=\"fa fa-trash\"></i></span> " + todoText + "</button></div>");
     $("button").draggable({cancel:false ,cursor: "crosshair", revert: "invalid"});
   }
 });
 	
-	//Delete button function in the list
+	//Delete button function in the event list
 $(".list").on("click", "span", function(event){
 $(this).parent().parent().fadeOut(500,function(){
 	$(this).remove();
@@ -41,29 +28,28 @@ $("#timetable").on("click", "span", function(event){
   event.stopPropagation();
 });
 
-	//Hide input function
+	//Hide and show input box 
 $(".fa-plus").click(function(){
 	$("input[type='text']").fadeToggle();
 });
 
-  //Refresh function
+  //Refresh function(used when the button is dropped)
   function init(){
     $(".list").find(".origin").remove();
-    $(".list").append("<div class=\"origin\"><button class=\"add\"><span><i class=\"fa fa-trash\"></i></span>Eat</button></div><div class=\"origin\"><button class=\"add\"><span><i class=\"fa fa-trash\"></i></span>Workout</button></div><div class=\"origin\"><button class=\"add\"><span><i class=\"fa fa-trash\"></i></span>Sleep</button></div><div class=\"origin\"><button class=\"add\"><span><i class=\"fa fa-trash\"></i></span>Laundry</button></div><div class=\"origin\"><button class=\"add\"><span><i class=\"fa fa-trash\"></i></span>Study</button></div>");
+    $(".list").append("<div class=\"origin\"><button class=\"add btn btn-primary\"><span><i class=\"fa fa-trash\"></i></span>Eat</button></div><div class=\"origin\"><button class=\"add btn btn-success\"><span><i class=\"fa fa-trash\"></i></span>Workout</button></div><div class=\"origin\"><button class=\"add btn btn-warning\"><span><i class=\"fa fa-trash\"></i></span>Sleep</button></div><div class=\"origin\"><button class=\"add btn btn-info\"><span><i class=\"fa fa-trash\"></i></span>Laundry</button></div><div class=\"origin\"><button class=\"add btn btn-dark\"><span><i class=\"fa fa-trash\"></i></span>Study</button></div>");
     $("button").draggable({cancel:false ,cursor: "crosshair", revert: "invalid"});
   } 
 
-  //drag and drop components
-// $(".add").draggable({ cursor: "crosshair", revert: "invalid"});
+  //Button Drop function for timetable and event list
 $(".timeSlot").droppable({ accept: ".add", 
            drop: function(event, ui) {
                     console.log("drop");
                    $(this).removeClass("border").removeClass("over");
              var dropped = ui.draggable;
             var droppedOn = $(this);
-            $(dropped).detach().css({top: 0,left: 0}).appendTo(droppedOn);      
+            $(dropped).detach().css({top: 0,left: 0}).appendTo(droppedOn);  
+  //When the buttons are dropped, generate new preset event buttons
             init(); 
-             
                 }, 
           over: function(event, elem) {
                   $(this).addClass("over");
@@ -74,7 +60,6 @@ $(".timeSlot").droppable({ accept: ".add",
                     $(this).removeClass("over");
                   }
                      });
-$(".timeSlot").sortable();
 
 $(".origin").droppable({ accept: ".add", drop: function(event, ui) {
                     console.log("drop");
