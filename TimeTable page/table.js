@@ -31,7 +31,13 @@ $("#timetable").on("click", "span", function(event){
 
 	//Hide and show input box 
 $(".fa-plus").click(function(){
-	$("input[type='text']").fadeToggle();
+  $("input[type='text']").fadeToggle();
+  if($(this).attr("title") == "Hide New Events"){
+    $(this).attr("title","Add New Events");
+  }
+  else if($(this).attr("title") == "Add New Events"){
+    $(this).attr("title","Hide New Events");
+  }
 });
 
   //Refresh function(used when the button is dropped)
