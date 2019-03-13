@@ -1,3 +1,43 @@
+//attempting to initialize divs to arrys/objects
+var days = {
+  Monday:
+  {
+      0: 
+      1:
+      2:
+      3:
+      4:
+      5:
+      6:
+      7:
+      8:
+      9:
+      10:
+      11:
+      12:
+      13:
+      14:
+      15:
+      16:
+      17:
+
+  }
+  
+}
+
+function fillClass(){
+
+  
+}
+
+
+
+
+
+
+
+
+
 
 //Give draggable function to all buttons
   $("button").draggable({cancel:false ,cursor: "crosshair", revert: "invalid"});
@@ -31,13 +71,7 @@ $("#timetable").on("click", "span", function(event){
 
 	//Hide and show input box 
 $(".fa-plus").click(function(){
-  $("input[type='text']").fadeToggle();
-  if($(this).attr("title") == "Hide New Events"){
-    $(this).attr("title","Add New Events");
-  }
-  else if($(this).attr("title") == "Add New Events"){
-    $(this).attr("title","Hide New Events");
-  }
+	$("input[type='text']").fadeToggle();
 });
 
   //Refresh function(used when the button is dropped)
@@ -68,6 +102,8 @@ $(".timeSlot").droppable({ accept: ".add",
                     $(this).removeClass("over");
                   }
                      });
+
+//Belows allows user to bring button back to task bar on the side
 
 // $(".origin").droppable({ accept: ".add", drop: function(event, ui) {
 //                     console.log("drop2");
