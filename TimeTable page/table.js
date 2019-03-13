@@ -37,7 +37,7 @@ $(".fa-plus").click(function(){
   //Refresh function(used when the button is dropped)
   function init(){
     $(".list").find(".origin").remove();
-    $(".list").append("<div class=\"origin\"><button class=\"add btn btn-primary\"><span><i class=\"fa fa-trash\"></i></span>Eat</button></div><div class=\"origin\"><button class=\"add btn btn-success\"><span><i class=\"fa fa-trash\"></i></span>Workout</button></div><div class=\"origin\"><button class=\"add btn btn-warning\"><span><i class=\"fa fa-trash\"></i></span>Sleep</button></div><div class=\"origin\"><button class=\"add btn btn-info\"><span><i class=\"fa fa-trash\"></i></span>Laundry</button></div><div class=\"origin\"><button class=\"add btn btn-dark\"><span><i class=\"fa fa-trash\"></i></span>Study</button></div>");
+    $(".list").append("<div class=\"origin\"><button class=\"add btn btn-primary\"><span><i class=\"fa fa-trash\"></i> </span>Eat</button></div><div class=\"origin\"><button class=\"add btn btn-success\"><span><i class=\"fa fa-trash\"></i></span>Workout</button></div><div class=\"origin\"><button class=\"add btn btn-warning\"><span><i class=\"fa fa-trash\"></i></span>Sleep</button></div><div class=\"origin\"><button class=\"add btn btn-info\"><span><i class=\"fa fa-trash\"></i></span>Laundry</button></div><div class=\"origin\"><button class=\"add btn btn-dark\"><span><i class=\"fa fa-trash\"></i></span>Study</button></div>");
     $("button").draggable({cancel:false ,cursor: "crosshair", revert: "invalid"});
   } 
 
@@ -48,6 +48,7 @@ $(".timeSlot").droppable({ accept: ".add",
                    $(this).removeClass("border").removeClass("over");
              var dropped = ui.draggable;
             var droppedOn = $(this);
+            console.log(this + " drodripdroppped");
             $(dropped).detach().css({top: 0,left: 0}).appendTo(droppedOn);  
   //When the buttons are dropped, generate new preset event buttons
             init(); 
@@ -62,11 +63,11 @@ $(".timeSlot").droppable({ accept: ".add",
                   }
                      });
 
-$(".origin").droppable({ accept: ".add", drop: function(event, ui) {
-                    console.log("drop");
-                   $(this).removeClass("border").removeClass("over");
-             var dropped = ui.draggable;
-            var droppedOn = $(this);
-            $(dropped).detach().css({top: 0,left: 0}).appendTo(droppedOn);      
+// $(".origin").droppable({ accept: ".add", drop: function(event, ui) {
+//                     console.log("drop2");
+//                    $(this).removeClass("border").removeClass("over");
+//              var dropped = ui.draggable;
+//             var droppedOn = $(this);
+//             $(dropped).detach().css({top: 0,left: 0}).appendTo(droppedOn);      
              
-}});
+// }});
