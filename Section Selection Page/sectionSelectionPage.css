@@ -19,7 +19,8 @@ html, body {
 }
 
 #content {
-    background: url("clock background.jpg");
+    background: url("clock background - light.png");
+    /* url for reference - opacity has been modified */
     /*background: url(http://66.media.tumblr.com/cca1e790be9930466b44867728a561d2/tumblr_mj3r8dQqy61qcdtsho1_1280.jpg);*/
     background-repeat: no-repeat;
     background-size: cover;
