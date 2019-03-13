@@ -12,15 +12,15 @@ html, body {
 }
   
 #sidebar {
-    /* background: #57005E; no gradient*/
+    /* background: #57005E; */
     background-image: linear-gradient(purple,#57005E);
-    /* background: #5B428B; other purple*/
     width: 10%;
     display: flex;
 }
 
 #content {
     background: url("../images/clock background - light.png");
+    /* url for reference - opacity has been modified */
     /*background: url(http://66.media.tumblr.com/cca1e790be9930466b44867728a561d2/tumblr_mj3r8dQqy61qcdtsho1_1280.jpg);*/
     background-repeat: no-repeat;
     background-size: cover;
@@ -71,12 +71,17 @@ h2 {
     margin: 15px;
 }
 
+h3 {
+    /* Choose Your Section */
+    text-align: left;
+    /* text-transform: uppercase; */
+    letter-spacing: 2px;
+    color: #57005E;
+    margin: 70px 15px 20px;
+}
+
 .number {
-    /* Subtle grey gradient */
     background-image: radial-gradient(circle, #D8D8D8, #777777);
-    /* Yellow */
-    /* background: #FBEF6F;*/
-    /* Grey border */
     border: 2px solid #A8A8A8;
     height: 5vw;
     width: 5vw;
@@ -95,35 +100,23 @@ h2 {
     color: black;
     text-decoration: none;
 }
-video {
-    width: 100%;
-    height: auto;
-    border: 4px solid #A8A8A8;
-}
-p {
-    /* Contains video */
-    width: 50%;
-    margin: 15px auto 15px auto;
-}
-#buttons {
-    /* Contains bottom 2 buttons (start from scratch, import) */
-    float: left;
-    width: 100%;
-}
-.continue {
-    /* bottom 2 buttons (start from scratch, import) */
+
+.section {
+    /* Formatting for all of the buttons, contained within the class "section" */
     background-image: radial-gradient(circle, purple, #57005E);
-    border: 2px solid purple;
+    border: 2px solid #57005E;
     height: 60px;
     line-height: 60px;
-    width: 300px;
-    margin: 15px auto 15px auto;
+    width: 22.099%;
+    margin: 15px 15px 15px 15px;
     text-align: center;
     border-radius: 10px;
     font-size: 0.8em;
+    float: left;
 }
-.continue a {
-    /* bottom button links */
+
+.section a {
+    /* Formatting for all of the button links, which lead to a "/table" link */
     display: block;
     height: 100%;
     width: 100%;
@@ -131,3 +124,6 @@ p {
     font-size: 2em;
     color: #A8A8A8;
     text-decoration: none;
+    font-weight: bold   
+}
+
