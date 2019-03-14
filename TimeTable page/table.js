@@ -100,7 +100,7 @@ $("input[type='text']").keypress(function(event){
 	if (event.which === 13) {
 		var todoText = $(this).val();
 		$(this).val("");
-		$("#list").append("<div class=\"origin\"><button class=\"add btn btn-secondary\"><span><i class=\"fa fa-trash\"></i></span> " + todoText + "</button></div>");
+		$("#list").append("<div class=\"preset\"><button class=\"add btn btn-secondary\"><span><i class=\"fa fa-trash\"></i></span> " + todoText + "</button></div>");
     $("button").draggable({cancel:false ,cursor: "crosshair", revert: true});
   }
 });
