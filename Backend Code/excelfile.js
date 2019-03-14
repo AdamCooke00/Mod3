@@ -1,11 +1,12 @@
+//Variables
 var fs = require("fs");
 var xlsx = require('node-xlsx');
 var xlsFile ='public/Section01Timetable.xlsx'
-var Monday = {start:[],len:[],code:[],type:[]}
-var Tuesday = {start:[],len:[],code:[],type:[]}
-var Wednesday = {start:[],len:[],code:[],type:[]}
-var Thursday = {start:[],len:[],code:[],type:[]}
-var Friday = {start:[],len:[],code:[],type:[]}
+var Monday = {index:[],code:[],type:[]}
+var Tuesday = {index:[],code:[],type:[]}
+var Wednesday = {index:[],code:[],type:[]}
+var Thursday = {index:[],code:[],type:[]}
+var Friday = {index:[],code:[],type:[]}
 var Section00 = {Monday,Tuesday,Wednesday,Thursday,Friday}
 
 var m = 0
@@ -13,7 +14,9 @@ var t = 0
 var w = 0
 var th = 0
 var f = 0
+var x = 0
 
+//check for file
 fs.exists(xlsFile, function(exists){
   if (exists) {
     console.log("File is loaded");
@@ -22,64 +25,115 @@ fs.exists(xlsFile, function(exists){
   }
 });
 
+//turn file into object
+var sec0 = xlsx.parse(xlsFile); 
 
+//run through the whole file sorting data
+for (var i =1 ; i<(sec0[0].data.length);i++){
+  
+      //takes the extra column out of the data
+      if(sec0[0].data[i].length > 5){
+        sec0[0].data[i].pop()
+      }
+      
+     //properly formats the data lengths and start time indexes
+      sec0[0].data[i][1]*=24;
+      sec0[0].data[i][2]*=24;
+      sec0[0].data[i][2] = sec0[0].data[i][2]-sec0[0].data[i][1]
+      sec0[0].data[i][3] = sec0[0].data[i][3].slice(5)
+      sec0[0].data[i][1] -= 7.5
+  
+      //fixes time issues
+      if(sec0[0].data[i][1]<0){
+        sec0[0].data[i][1]+=12;
+      }
+      
+      // checks to see if 
+      if(sec0[0].data[i][2]==2){
+        sec0[0].data.splice(i,0,[
+          sec0[0].data[i][0],
+          sec0[0].data[i][1],
+          sec0[0].data[i][2],
+          sec0[0].data[i][3],
+          sec0[0].data[i][4]
+          ])
+          i++
+      }
+      
+      if(sec0[0].data[i][2]==3){
+        sec0[0].data.splice(i,0,[
+          sec0[0].data[i][0],
+          sec0[0].data[i][1],
+          sec0[0].data[i][2],
+          sec0[0].data[i][3],
+          sec0[0].data[i][4]
+          ])
+          i++
+          x = i
+      }
+}
+if(sec0[0].data[x][2]==3){
+        sec0[0].data.splice(x,0,[
+          sec0[0].data[x][0],
+          sec0[0].data[x][1],
+          sec0[0].data[x][2],
+          sec0[0].data[x][3],
+          sec0[0].data[x][4]
+          ])
+      }
 
-
-var sec0 = xlsx.parse(xlsFile); ` `
 
 for (var i =1 ; i<(sec0[0].data.length);i++){
-  if(sec0[0].data[i].length > 5){
-    sec0[0].data[i].pop()
-  }
-  sec0[0].data[i][1]*=24;
-  sec0[0].data[i][2]*=24;
-  sec0[0].data[i][2] = sec0[0].data[i][2]-sec0[0].data[i][1]
-  sec0[0].data[i][3] = sec0[0].data[i][3].slice(5)
   
   if(sec0[0].data[i][0]=="Mon"){
-    Monday.start[m]= sec0[0].data[i][1]
-    Monday.len[m]= sec0[0].data[i][2]
+    Monday.index[m]= sec0[0].data[i][1]
     Monday.code[m]= sec0[0].data[i][3]
     Monday.type[m]= sec0[0].data[i][4]
+    if (Monday.index[m]==Monday.index[m-1]){
+      console.log('it was triggered')
+      Monday.index[m]++
+    }
     m++
   }
   else if(sec0[0].data[i][0]=="Tue"){
-    Tuesday.start[t]= sec0[0].data[i][1]
-    Tuesday.len[t]= sec0[0].data[i][2]
+    Tuesday.index[t]= sec0[0].data[i][1]
     Tuesday.code[t]= sec0[0].data[i][3]
     Tuesday.type[t]= sec0[0].data[i][4]
+    if (Tuesday.index[t]==Tuesday.index[t-1]){
+      console.log('it was triggered')
+      Tuesday.index[t]++
+    }
     t++
   }
   else if(sec0[0].data[i][0]=="Wed"){
-    Wednesday.start[w]= sec0[0].data[i][1]
-    Wednesday.len[w]= sec0[0].data[i][2]
+    Wednesday.index[w]= sec0[0].data[i][1]
     Wednesday.code[w]= sec0[0].data[i][3]
     Wednesday.type[w]= sec0[0].data[i][4]
+    if (Wednesday.index[w]<=Wednesday.index[w-1]){
+      console.log('it was triggered')
+      Wednesday.index[w]=Wednesday.index[w-1]+1
+    }
     w++
   }
   else if(sec0[0].data[i][0]=="Thu"){
-    Thursday.start[th]= sec0[0].data[i][1]
-    Thursday.len[th]= sec0[0].data[i][2]
+    Thursday.index[th]= sec0[0].data[i][1]
     Thursday.code[th]= sec0[0].data[i][3]
     Thursday.type[th]= sec0[0].data[i][4]
+    if (Thursday.index[th]<=Thursday.index[th-1]){
+      console.log('it was triggered')
+      Thursday.index[th]=Thursday.index[th-1]+1
+    }
     th++
   }
   else{
-    Friday.start[f]= sec0[0].data[i][1]
-    Friday.len[f]= sec0[0].data[i][2]
+    Friday.index[f]= sec0[0].data[i][1]
     Friday.code[f]= sec0[0].data[i][3]
     Friday.type[f]= sec0[0].data[i][4]
+    if (Friday.index[f]<=Friday.index[f-1]){
+      console.log('it was triggered')
+      Friday.index[f]=Friday.index[f-1]+1
+    }
     f++
   }
-  
-  
-console.log(sec0[0].data[i])
 }
-
 console.log(Section00)
-
-//Server Side
-//res.render("app.ejs", {Monday, preSet})
-
-//FrontEnd JS
-//
