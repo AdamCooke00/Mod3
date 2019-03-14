@@ -121,6 +121,7 @@ $("#timetable").on("click", "span", function(event){
   event.stopPropagation();
 });
 
+  //Hide and show input box 
 $(".fa-plus").click(function(){
 	$("input[type='text']").fadeToggle();
   if($(this).attr("title") == "Hide New Events"){
@@ -131,10 +132,7 @@ $(".fa-plus").click(function(){
   }
 });
 
-	//Hide and show input box 
-$(".fa-plus").click(function(){
-	$("input[type='text']").fadeToggle();
-});
+	
 
   //Button Drop function for timetable and event list
 $(".timeSlot").not('.lecture').droppable({ accept: ".add", 
