@@ -135,28 +135,35 @@ $(".fa-plus").click(function(){
 	
 
   //Button Drop function for timetable and event list
-$(".timeSlot").not('.lecture').droppable({ accept: ".add", 
-          drop: function(event, ui) {
-          console.log("drop");
-           $(this).removeClass("border").removeClass("over");
+  $(".timeSlot").not('.lecture').droppable({ accept: ".add",
+  drop: function(event, ui) {
+      if ($(ui.draggable).hasClass('copy')){
+          $(this).removeClass("border").removeClass("over");
+          var dropped = ui.draggable;
+          var droppedOn = $(this);
+          $(dropped).css({top: 0,left: 0}).appendTo(droppedOn);
+      } else {
+          $(this).removeClass("border").removeClass("over");
           var dropped = ui.draggable;
           var droppedOn = $(this);
           var newBtn = $(dropped).clone();
           $(dropped).draggable("option", "revertDuration", 0);
+          $(newBtn).addClass('copy');
           $(newBtn).css({top: 0,left: 0}).appendTo(droppedOn);
           setTimeout(function(){
-          $(dropped).draggable("option", "revertDuration", 500);
+              $(dropped).draggable("option", "revertDuration", 500);
           }, 100);
           $("button").draggable({cancel:false ,cursor: "crosshair", revert: true});
-          }, 
-          over: function(event, elem) {
-          $(this).addClass("over");
-          console.log("over");
-          },
-          out: function(event, elem) {
-          $(this).removeClass("over");
-          }
-          });
+      }
+  }, 
+  over: function(event, elem) {
+      $(this).addClass("over");
+      console.log("over");
+  },
+  out: function(event, elem) {
+      $(this).removeClass("over");
+  }
+});
 
 //Belows allows user to bring button back to task bar on the side
 
