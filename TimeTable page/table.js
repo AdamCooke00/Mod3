@@ -1,3 +1,107 @@
+Section00 = { Monday:
+
+  { index: [ 3, 4, 6, 7, 8 ],
+
+    code: [ '151', '131', '171', '171', '143' ],
+
+    type: [ 'LECT', 'TUT', 'TUT', 'LECT', 'LECT' ] },
+
+ Tuesday:
+
+  { index: [ 1, 2, 2, 8, 9 ],
+
+    code: [ '151', '143', '143', '111', '171' ],
+
+    type: [ 'LECT', 'LAB', 'LAB', 'LECT', 'LECT' ] },
+
+ Wednesday:
+
+  { index: [ 2, 3, 7, 7, 7 ],
+
+    code: [ '151', '100', '100', '100', '100' ],
+
+    type: [ 'LECT', 'LECT', 'LAB', 'LAB', 'LAB' ] },
+
+ Thursday:
+
+  { index: [ 2, 3, 7, 8, 9 ],
+
+    code: [ '100', '100', '111', '171', '143' ],
+
+    type: [ 'LECT', 'STUDIO', 'LECT', 'LECT', 'LECT' ] },
+
+ Friday:
+
+  { index: [ 1, 2, 3, 7, 7, 9 ],
+
+    code: [ '151', '131', '111', '151', '151', '111' ],
+
+    type: [ 'LECT', 'LECT', 'TUT', 'LAB', 'LAB', 'LECT' ] } }
+
+var n=0;
+for(var i=0;i<85;i++){
+ if(i%17==0 && i!=0){
+   console.log("setting n to zero");
+   n=0;
+ }
+ if(i<17 && i==Section00.Monday.index[n]){
+ 
+     $("#mondayFunday").append("<div class=\"timeSlot lecture\"> APSC " + Section00.Monday.code[n] + " </div>");
+     n++;
+ }  
+ else if(i>=17 && i<34 && (i%17)==Section00.Tuesday.index[n]){
+   $("#tuesdayFunday").append("<div class=\"timeSlot lecture\"> APSC " + Section00.Tuesday.code[n] + " </div>");
+   n++;
+ }
+ else if(i>=34&&i<51 && (i%17)==Section00.Wednesday.index[n]){
+ 
+   $("#wednesdayFunday").append("<div class=\"timeSlot lecture\"> APSC " + Section00.Wednesday.code[n] + " </div>");
+   n++;
+ }
+ else if(i>=51&&i<68 && (i%17)==Section00.Thursday.index[n]){
+   $("#thursdayFunday").append("<div class=\"timeSlot lecture\"> APSC " + Section00.Thursday.code[n] + " </div>");
+   n++;
+ }
+ else if(i>=68&&i<85 && (i%17)==Section00.Friday.index[n]){
+   $("#fridayFunday").append("<div class=\"timeSlot lecture\"> APSC " + Section00.Friday.code[n] + " </div>");
+   n++;
+ }
+ else if(i<17){
+   $("#mondayFunday").append("<div class=\"timeSlot\"></div>");
+ }
+ else if(i>=17&&i<34){
+   $("#tuesdayFunday").append("<div class=\"timeSlot\"></div>");
+ }
+ else if(i>=34&&i<51){
+   $("#wednesdayFunday").append("<div class=\"timeSlot\"></div>");
+ }
+ else if(i>=51&&i<68){
+   $("#thursdayFunday").append("<div class=\"timeSlot\"></div>");
+ }
+ // else(i>68&&i<85){
+ else{
+   $("#fridayFunday").append("<div class=\"timeSlot\"></div>");
+ }
+}
+// for(var i=0;i<17;i++){
+
+//   if(i==Section00.Monday.start[n]){
+ 
+//       $("#mondayFunday").append("<div class=\"timeSlot lecture\"> APSC " + Section00.Monday.code[n] + " </div>")
+//       n++;
+//     }
+//   else{
+//     $("#mondayFunday").append("<div class=\"timeSlot\"></div>")
+
+//   }
+// }
+
+// var divvy = document.createElement("div");
+// var node = document.createTextNode("APSC151");
+// divvy.appendChild(node);
+// $("#timeColumn").append(divvy);
+
+
 
 //Give draggable function to all buttons
   $("button").draggable({cancel:false ,cursor: "crosshair", revert: "invalid"});
