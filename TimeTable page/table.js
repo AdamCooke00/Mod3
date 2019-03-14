@@ -137,7 +137,7 @@ $(".fa-plus").click(function(){
 });
 
   //Button Drop function for timetable and event list
-$(".timeSlot").droppable({ accept: ".add", 
+$(".timeSlot").not('.lecture').droppable({ accept: ".add", 
           drop: function(event, ui) {
           console.log("drop");
            $(this).removeClass("border").removeClass("over");
