@@ -48,7 +48,7 @@ for (var i =1 ; i<(sec0[0].data.length);i++){
         sec0[0].data[i][1]+=12;
       }
       
-      // checks to see if 
+      // checks to see if length of class is 2hrs, turns into 2 items
       if(sec0[0].data[i][2]==2){
         sec0[0].data.splice(i,0,[
           sec0[0].data[i][0],
@@ -59,7 +59,7 @@ for (var i =1 ; i<(sec0[0].data.length);i++){
           ])
           i++
       }
-      
+      // checks to see if length of class is 3hrs, turns into 2 items
       if(sec0[0].data[i][2]==3){
         sec0[0].data.splice(i,0,[
           sec0[0].data[i][0],
@@ -72,6 +72,7 @@ for (var i =1 ; i<(sec0[0].data.length);i++){
           x = i
       }
 }
+// adds 3rd element for classes that are 3hrs in length 
 if(sec0[0].data[x][2]==3){
         sec0[0].data.splice(x,0,[
           sec0[0].data[x][0],
@@ -82,14 +83,17 @@ if(sec0[0].data[x][2]==3){
           ])
       }
 
-
+//runs through past object and puts data into final required format
 for (var i =1 ; i<(sec0[0].data.length);i++){
   
+  //looks for where day is "Mon" and creates object
   if(sec0[0].data[i][0]=="Mon"){
     Monday.index[m]= sec0[0].data[i][1]
     Monday.code[m]= sec0[0].data[i][3]
     Monday.type[m]= sec0[0].data[i][4]
-    if (Monday.index[m]==Monday.index[m-1]){
+    
+    //makes sure that multiple hour classes have different indexes
+    if (Monday.index[m]<=Monday.index[m-1]){
       console.log('it was triggered')
       Monday.index[m]++
     }
@@ -99,7 +103,8 @@ for (var i =1 ; i<(sec0[0].data.length);i++){
     Tuesday.index[t]= sec0[0].data[i][1]
     Tuesday.code[t]= sec0[0].data[i][3]
     Tuesday.type[t]= sec0[0].data[i][4]
-    if (Tuesday.index[t]==Tuesday.index[t-1]){
+    
+    if (Tuesday.index[t]<=Tuesday.index[t-1]){
       console.log('it was triggered')
       Tuesday.index[t]++
     }
@@ -109,6 +114,7 @@ for (var i =1 ; i<(sec0[0].data.length);i++){
     Wednesday.index[w]= sec0[0].data[i][1]
     Wednesday.code[w]= sec0[0].data[i][3]
     Wednesday.type[w]= sec0[0].data[i][4]
+    
     if (Wednesday.index[w]<=Wednesday.index[w-1]){
       console.log('it was triggered')
       Wednesday.index[w]=Wednesday.index[w-1]+1
@@ -118,7 +124,8 @@ for (var i =1 ; i<(sec0[0].data.length);i++){
   else if(sec0[0].data[i][0]=="Thu"){
     Thursday.index[th]= sec0[0].data[i][1]
     Thursday.code[th]= sec0[0].data[i][3]
-    Thursday.type[th]= sec0[0].data[i][4]
+    Thursday.type[th]= sec0[0].data[i]
+    
     if (Thursday.index[th]<=Thursday.index[th-1]){
       console.log('it was triggered')
       Thursday.index[th]=Thursday.index[th-1]+1
@@ -129,6 +136,7 @@ for (var i =1 ; i<(sec0[0].data.length);i++){
     Friday.index[f]= sec0[0].data[i][1]
     Friday.code[f]= sec0[0].data[i][3]
     Friday.type[f]= sec0[0].data[i][4]
+    
     if (Friday.index[f]<=Friday.index[f-1]){
       console.log('it was triggered')
       Friday.index[f]=Friday.index[f-1]+1
