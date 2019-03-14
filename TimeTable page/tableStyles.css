@@ -65,6 +65,9 @@ h1 {
     text-align: center;
 }
 
+body{
+    height: 100%;
+}
 button{
     font-family: Roboto;
     width: 100%;
@@ -114,3 +117,7 @@ input::-webkit-input-placeholder {
   border: solid 5px purple;
 }
 
+.lecture{
+    border: solid 1px crimson;
+    background-color: khaki;
+}

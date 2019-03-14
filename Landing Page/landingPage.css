@@ -12,10 +12,11 @@ html, body {
 }
   
 #sidebar {
-    /* background: #57005E; no gradient*/
+    /* background: #57005E; purple no gradient*/
+    /* background: #5B428B; other purple no gradient*/
     background-image: linear-gradient(purple,#57005E);
-    /* background: #5B428B; other purple*/
-    width: 10%;
+    /* 7% same width from timetable page */
+    width: 7%;
     display: flex;
 }
 
@@ -24,7 +25,7 @@ html, body {
     /*background: url(http://66.media.tumblr.com/cca1e790be9930466b44867728a561d2/tumblr_mj3r8dQqy61qcdtsho1_1280.jpg);*/
     background-repeat: no-repeat;
     background-size: cover;
-    width: 90%;
+    width: 93%;
 }
 
 .parent {
@@ -38,7 +39,7 @@ html, body {
     margin: 0;
     position: absolute;
     top: 50%;
-    left: 5%;
+    left: 3.5%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
@@ -78,13 +79,15 @@ h2 {
     /* background: #FBEF6F;*/
     /* Grey border */
     border: 2px solid #A8A8A8;
-    height: 5vw;
-    width: 5vw;
-    line-height: 5vw;
+    /* height and width are equal, dependent on sidebar width. For sidebar of 10%, 5vw. font size is half. */
+    height: 3.5vw;
+    width: 3.5vw;
+    /* line-height must be equal to height to keep text centred */
+    line-height: 3.5vw;
     margin: 15% auto 15% auto;
     text-align: center;
     border-radius: 10px;
-    font-size: 2.5vw;
+    font-size: 1.75vw;
 }
 .number a {
     /* number button links */
@@ -95,10 +98,45 @@ h2 {
     color: black;
     text-decoration: none;
 }
+.active {
+    /* for current page number */
+    background-image: radial-gradient(circle, purple, #57005E);
+    /* active height is 6/5 of normal height. normal height is 3.5vw */
+    height: 4.2vw;
+    width: 4.2vw;
+    /* line-height must be equal to height to keep text centred */
+    line-height: 4.2vw;
+}
+.active:hover, .continue:hover {
+    background-image: radial-gradient(circle, rgb(68, 1, 73), rgb(153, 0, 153));
+}
+.active a {
+    color: #D8D8D8;
+}
+.available:hover {
+    background-image: radial-gradient(circle, #777777, #D8D8D8);
+}
+.available a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    float: left;
+    color: black;
+    text-decoration: none;
+}
+
+.disabled {
+    cursor: not-allowed;
+    filter: alpha(opacity=80);
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    opacity: .80;
+}
+
 video {
     width: 100%;
     height: auto;
-    border: 4px solid #A8A8A8;
+    border: 8px solid #57005E;
 }
 p {
     /* Contains video */
