@@ -15,12 +15,14 @@
 <div id="sidebar">
     <div class="parent">
         <img width="800" height="800" id="logo" src="../images/QClock.png">
-            <div id="allNumbers">
-                <div class="number"><a href="/">1</a></div>
-                <div class="number"><a href="/sectionSelection">2</a></div>
-                <div class="number"><a href="/table">3</a></div>
-                <div class="number"><a href="/export">4</a></div>
-            </div>
+        <div id="allNumbers">
+            <div class="number available" title="First Page"><a href="/">1</a></div>
+            <div class="number active" title="Current Page"><a href="/sectionSelection">2</a></div>
+            <div class="number disabled" title="Third Page (complete previous steps)">3</div>
+                <!-- button 3 will link to <a href="/table">3</a> -->
+            <div class="number disabled" title="Fourth Page (complete previous steps)">4</div>
+                <!-- button 4 will link to <a href="/export">4</a> -->
+        </div>
     </div>
 </div>
 
