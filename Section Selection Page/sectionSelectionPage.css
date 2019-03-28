@@ -43,6 +43,13 @@ html, body {
     transform: translate(-50%, -50%);
 }
 
+#buttons {
+    /* centres section buttons */
+    margin-top: 5.5%;
+    position: absolute;
+    left: 7.5%;
+}
+
 #logo {
     margin: 15px 20% 15px 20%;
     display: block;
@@ -80,15 +87,17 @@ h3 {
     margin: 70px 15px 20px;
 }
 
-
 .section {
     /* Formatting for all of the buttons, contained within the class "section" */
     background-image: radial-gradient(circle, purple, #57005E);
     border: 2px solid #57005E;
     height: 60px;
     line-height: 60px;
-    width: 22.099%;
-    margin: 15px 15px 15px 15px;
+    width: 22%;
+    /* width: 22.099%; */
+    min-width: 155px;
+    margin: 1.33%;
+    /* margin: 15px; */
     text-align: center;
     border-radius: 10px;
     font-size: 0.8em;
@@ -101,12 +110,9 @@ h3 {
     width: 100%;
     float: left;
     font-size: 2em;
-    color: #A8A8A8;
+    color: #c8c8c8;
     text-decoration: none;
     font-weight: bold   
-}
-.section:hover {
-
 }
 
 .number {
@@ -135,6 +141,7 @@ h3 {
     color: black;
     text-decoration: none;
 }
+
 .active {
     /* for current page number */
     background-image: radial-gradient(circle, purple, #57005E);
@@ -150,6 +157,7 @@ h3 {
 .active a {
     color: #D8D8D8;
 }
+
 .available:hover {
     background-image: radial-gradient(circle, #777777, #D8D8D8);
 }
@@ -163,35 +171,10 @@ h3 {
 }
 
 .disabled {
+    /* Sidebar buttons that are not available yet (earlier steps to be completed) */
     cursor: not-allowed;
     filter: alpha(opacity=80);
     -webkit-box-shadow: none;
             box-shadow: none;
     opacity: .80;
 }
-#buttons {
-    /* Contains bottom 2 buttons (start from scratch, import) */
-    float: left;
-    width: 100%;
-}
-.continue {
-    /* bottom 2 buttons (start from scratch, import) */
-    background-image: radial-gradient(circle, purple, #57005E);
-    border: 2px solid purple;
-    height: 60px;
-    line-height: 60px;
-    width: 300px;
-    margin: 15px auto 15px auto;
-    text-align: center;
-    border-radius: 10px;
-    font-size: 0.8em;
-}
-.continue a {
-    /* bottom button links */
-    display: block;
-    height: 100%;
-    width: 100%;
-    float: left;
-    font-size: 2em;
-    color: #A8A8A8;
-    text-decoration: none;
