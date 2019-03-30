@@ -1,3 +1,40 @@
+//Setting up mongoose for database
+var mongoose = require("mongoose")
+mongoose.connect('mongodb://localhost/ExcelData', { useNewUrlParser: true });
+
+//schema for each section
+var sectionSchema = new mongoose.Schema({
+      
+  Monday:{
+      index:[Array],
+      code:[Array],
+      type:[Array]
+     },
+  Tuesday:{ 
+      index:[Array],
+      code:[Array],
+      type:[Array]
+  },
+  Wednesday:{ 
+      index:[Array],
+      code:[Array],
+      type:[Array]
+  },
+  Thursday:{ 
+      index:[Array],
+      code:[Array],
+      type:[Array]
+  },
+  Friday:{ 
+      index:[Array],
+      code:[Array],
+      type:[Array]
+  }
+    
+});
+
+var sections = mongoose.model("sections", sectionSchema);
+
 //Variables
 var fs = require("fs");
 var xlsx = require('node-xlsx');
@@ -7,8 +44,6 @@ var Tuesday = {index:[],code:[],type:[]}
 var Wednesday = {index:[],code:[],type:[]}
 var Thursday = {index:[],code:[],type:[]}
 var Friday = {index:[],code:[],type:[]}
-var Section00 = {Monday,Tuesday,Wednesday,Thursday,Friday}
-
 var m = 0
 var t = 0
 var w = 0
@@ -124,7 +159,7 @@ for (var i =1 ; i<(sec0[0].data.length);i++){
   else if(sec0[0].data[i][0]=="Thu"){
     Thursday.index[th]= sec0[0].data[i][1]
     Thursday.code[th]= sec0[0].data[i][3]
-    Thursday.type[th]= sec0[0].data[i]
+    Thursday.type[th]= sec0[0].data[i][4]
     
     if (Thursday.index[th]<=Thursday.index[th-1]){
       console.log('it was triggered')
@@ -145,3 +180,53 @@ for (var i =1 ; i<(sec0[0].data.length);i++){
   }
 }
 console.log(Section00)
+
+/*sections.create(Section00, function(err,created){
+    if (err){
+        console.log("i fucked up")
+        console.log(err)
+    }
+    else{
+        console.log(sections)
+    }
+});*/
+
+var Section00 = new sections({
+     Monday:{
+      index:Monday.index,
+      code:Monday.code,
+      type:Monday.type
+     },
+  Tuesday:{ 
+      index:Tuesday.index,
+      code:Tuesday.code,
+      type:Tuesday.type
+  },
+  Wednesday:{ 
+      index:Wednesday.index,
+      code:Wednesday.code,
+      type:Wednesday.type
+  },
+  Thursday:{ 
+      index:Thursday.index,
+      code:Thursday.code,
+      type:Thursday.type
+  },
+  Friday:{ 
+      index:Friday.index,
+      code:Friday.code,
+      type:Friday.type
+  }
+    
+  });
+  Section00.save(function(err,yes){
+    if(err){
+      console.log("shit didnt work")
+      console.log(err)
+    }
+    else{
+      console.log("shit worked")
+      console.log(yes)
+    }
+  });
+  
