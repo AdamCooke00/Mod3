@@ -51,7 +51,7 @@ app.get("/sectionSelection", function(req,res){
     console.log("User made request to section page")
 });
 
-app.get("/table", function(req,res){
+app.get("/section01", function(req,res){
     
     
     var id = "5c9d543a320a21124e48915e"
@@ -64,9 +64,27 @@ app.get("/table", function(req,res){
             res.render("index.ejs",{Section00:JSON.stringify(Section00)});
         }
     } );
-    
+
     console.log("User made request to table page")
 });
+
+app.get("/section02", function(req,res){
+    
+    
+    var id = "5ca3a7ac6761491243c92f23"
+    sections.findById(id, function (err, Section00) {
+        if(err){
+            console.log("it didnt load")
+            console.log(err)
+        }
+        else{
+            res.render("index.ejs",{Section00:JSON.stringify(Section00)});
+        }
+    } );
+
+    console.log("User made request to table page")
+});
+
 
 
 app.listen(process.env.PORT, process.env.IP, function(){
