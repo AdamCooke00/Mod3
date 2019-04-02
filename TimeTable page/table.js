@@ -1,30 +1,30 @@
-/*Section00 = { 
-  Monday:
+Section00 = { 
+  Monday:[[
   {       index: [3,4,6,7,8],
           code: ['151','131','171','171','143'],
           type: ['LECT','TUT','TUT','LECT','LECT']
-  },
- Tuesday:
+  }]],
+ Tuesday:[[
   { index: [ 1, 2, 3, 8, 9 ],
     code: [ '151', '143', '143', '111', '171' ],
     type: [ 'LECT', 'LAB', 'LAB', 'LECT', 'LECT' ]
-  },
- Wednesday:
+  }]],
+ Wednesday:[[
   { index: [ 2, 3, 7, 8, 9 ],
     code: [ '151', '100', '100', '100', '100' ],
     type: [ 'LECT', 'LECT', 'LAB', 'LAB', 'LAB' ]
-  },
- Thursday:
+  }]],
+ Thursday:[[
   { index: [ 2, 3, 7, 8, 9 ],
     code: [ '100', '100', '111', '171', '143' ],
     type: [ 'LECT', 'STUDIO', 'LECT', 'LECT', 'LECT' ]
-  },
- Friday:
+  }]],
+ Friday:[[
   { index: [ 1, 2, 3, 7, 8, 9 ],
     code: [ '151', '131', '111', '151', '151', '111' ],
     type: [ 'LECT', 'LECT', 'TUT', 'LAB', 'LAB', 'LECT' ]
-  } 
-}*/
+  }]] 
+}
 
 var n=0;
 for(var i=0;i<85;i++){
