@@ -100,13 +100,13 @@ $("input[type='text']").keypress(function(event){
 	if (event.which === 13) {
 		var todoText = $(this).val();
 		$(this).val("");
-		$("#list").append("<div class=\"preset\"><button class=\"add btn btn-secondary\"><span><i class=\"fa fa-trash\"></i></span> " + todoText + "</button></div>");
+		$("#list").append("<div class=\"preset\"><button class=\"add btn btn-secondary\">" + todoText + "<span class=\"delete\"><i class=\"fas fa-times\"></i></span></button></div>");
     $("button").draggable({cancel:false ,cursor: "crosshair", revert: true});
   }
 });
 	
 	//Delete button function in the event list
-$("#list").on("click", "span", function(event){
+$("#list").on("click", ".delete", function(event){
 $(this).parent().fadeOut(500,function(){
 	$(this).remove();
 });
@@ -114,7 +114,7 @@ event.stopPropagation();
 });
 
   //Delete button function in the timetable
-$("#timetable").on("click", "span", function(event){
+$("#timetable").on("click", ".delete", function(event){
   $(this).parent().fadeOut(500,function(){
     $(this).remove();
   });
@@ -122,15 +122,15 @@ $("#timetable").on("click", "span", function(event){
 });
 
   //Hide and show input box 
-$(".fa-plus").click(function(){
-	$("input[type='text']").fadeToggle();
-  if($(this).attr("title") == "Hide New Events"){
-    $(this).attr("title","Add New Events");
-  }
-  else if($(this).attr("title") == "Add New Events"){
-    $(this).attr("title","Hide New Events");
-  }
-});
+// $(".fa-plus").click(function(){
+// 	$("input[type='text']").fadeToggle();
+//   if($(this).attr("title") == "Hide New Events"){
+//     $(this).attr("title","Add New Events");
+//   }
+//   else if($(this).attr("title") == "Add New Events"){
+//     $(this).attr("title","Hide New Events");
+//   }
+// });
 
 	
 

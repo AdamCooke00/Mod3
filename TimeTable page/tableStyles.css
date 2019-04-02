@@ -224,3 +224,10 @@ input::-webkit-input-placeholder {
 span{
     border: solid 1px red;
 }
+.delete{
+    position: absolute;
+    right: 5px;
+    top: 0;
+    margin: 0;
+    padding: 0;
+}
