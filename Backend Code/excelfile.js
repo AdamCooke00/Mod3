@@ -221,11 +221,11 @@ var Section00 = new sections({
   });
   Section00.save(function(err,yes){
     if(err){
-      console.log("shit didnt work")
+      console.log("it didnt work")
       console.log(err)
     }
     else{
-      console.log("shit worked")
+      console.log("it worked")
       console.log(yes)
     }
   });

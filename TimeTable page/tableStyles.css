@@ -137,6 +137,7 @@
     height: 30px;
     background-color: cadetblue;
     position: fixed;
+    z-index: 5;
 }
 
 #timetable{
@@ -146,7 +147,9 @@
 #timeColumn{
     background-color: gray;
 }
-/*Button style code */
+/*
+
+style code */
 h1 {
     width: 100%;
     height: 80px;
@@ -216,4 +219,8 @@ input::-webkit-input-placeholder {
 .lecture{
     border: solid 1px crimson;
     background-color: khaki;
+}
+
+span{
+    border: solid 1px red;
 }

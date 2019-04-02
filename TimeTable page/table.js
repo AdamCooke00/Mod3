@@ -1,4 +1,4 @@
-Section00 = { 
+/*Section00 = { 
   Monday:
   {       index: [3,4,6,7,8],
           code: ['151','131','171','171','143'],
@@ -24,7 +24,7 @@ Section00 = {
     code: [ '151', '131', '111', '151', '151', '111' ],
     type: [ 'LECT', 'LECT', 'TUT', 'LAB', 'LAB', 'LECT' ]
   } 
-}
+}*/
 
 var n=0;
 for(var i=0;i<85;i++){
@@ -32,26 +32,26 @@ for(var i=0;i<85;i++){
    console.log("setting n to zero");
    n=0;
  }
- if(i<17 && i==Section00.Monday.index[n]){
+ if(i<17 && i==Section00.Monday[0][0].index[n]){
  
-     $("#mondayFunday").append("<div class=\"timeSlot lecture\"> APSC " + Section00.Monday.code[n] + " </div>");
+     $("#mondayFunday").append("<div class=\"timeSlot lecture\"> APSC " + Section00.Monday[0][0].code[n] + " </div>");
      n++;
  }  
- else if(i>=17 && i<34 && (i%17)==Section00.Tuesday.index[n]){
-   $("#tuesdayFunday").append("<div class=\"timeSlot lecture\"> APSC " + Section00.Tuesday.code[n] + " </div>");
+ else if(i>=17 && i<34 && (i%17)==Section00.Tuesday[0][0].index[n]){
+   $("#tuesdayFunday").append("<div class=\"timeSlot lecture\"> APSC " + Section00.Tuesday[0][0].code[n] + " </div>");
    n++;
  }
- else if(i>=34&&i<51 && (i%17)==Section00.Wednesday.index[n]){
+ else if(i>=34&&i<51 && (i%17)==Section00.Wednesday[0][0].index[n]){
  
-   $("#wednesdayFunday").append("<div class=\"timeSlot lecture\"> APSC " + Section00.Wednesday.code[n] + " </div>");
+   $("#wednesdayFunday").append("<div class=\"timeSlot lecture\"> APSC " + Section00.Wednesday[0][0].code[n] + " </div>");
    n++;
  }
- else if(i>=51&&i<68 && (i%17)==Section00.Thursday.index[n]){
-   $("#thursdayFunday").append("<div class=\"timeSlot lecture\"> APSC " + Section00.Thursday.code[n] + " </div>");
+ else if(i>=51&&i<68 && (i%17)==Section00.Thursday[0][0].index[n]){
+   $("#thursdayFunday").append("<div class=\"timeSlot lecture\"> APSC " + Section00.Thursday[0][0].code[n] + " </div>");
    n++;
  }
- else if(i>=68&&i<85 && (i%17)==Section00.Friday.index[n]){
-   $("#fridayFunday").append("<div class=\"timeSlot lecture\"> APSC " + Section00.Friday.code[n] + " </div>");
+ else if(i>=68&&i<85 && (i%17)==Section00.Friday[0][0].index[n]){
+   $("#fridayFunday").append("<div class=\"timeSlot lecture\"> APSC " + Section00.Friday[0][0].code[n] + " </div>");
    n++;
  }
  else if(i<17){
