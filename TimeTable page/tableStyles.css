@@ -99,6 +99,7 @@
     float: left;
     height: 100%;
     overflow: scroll;
+    overflow-x: hidden;
 }
 
 #numberingBar{
