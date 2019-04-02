@@ -38,7 +38,8 @@ var sectionSchema = new mongoose.Schema({
 
 
 var sections = mongoose.model("sections", sectionSchema);
-mongoose.connect('mongodb://localhost/ExcelData', { useNewUrlParser: true });
+//mongoose.connect('mongodb://localhost/ExcelData', { useNewUrlParser: true });
+mongoose.connect('mongodb+srv://malcolm:queens@cluster0-swqqj.mongodb.net/test?retryWrites=true', { useNewUrlParser: true });
 
 // ROUTES
 app.get("/", function(req,res){
@@ -54,7 +55,7 @@ app.get("/sectionSelection", function(req,res){
 app.get("/section01", function(req,res){
     
     
-    var id = "5c9d543a320a21124e48915e"
+    var id = "5ca3e43c2d8f3e0ac4f1ef0a"
     sections.findById(id, function (err, Section00) {
         if(err){
             console.log("it didnt load")
@@ -71,7 +72,7 @@ app.get("/section01", function(req,res){
 app.get("/section02", function(req,res){
     
     
-    var id = "5ca3a7ac6761491243c92f23"
+    var id = "5ca3e674ddde470ae6c64422"
     sections.findById(id, function (err, Section00) {
         if(err){
             console.log("it didnt load")
