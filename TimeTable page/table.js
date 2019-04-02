@@ -34,24 +34,24 @@ for(var i=0;i<85;i++){
  }
  if(i<17 && i==Section00.Monday[0][0].index[n]){
  
-     $("#mondayFunday").append("<div class=\"timeSlot lecture\"> APSC " + Section00.Monday[0][0].code[n] + " </div>");
+     $("#mondayFunday").append("<div class=\"timeSlot btn btn-danger lecture\"> APSC " + Section00.Monday[0][0].code[n] + " </div>");
      n++;
  }  
  else if(i>=17 && i<34 && (i%17)==Section00.Tuesday[0][0].index[n]){
-   $("#tuesdayFunday").append("<div class=\"timeSlot lecture\"> APSC " + Section00.Tuesday[0][0].code[n] + " </div>");
+   $("#tuesdayFunday").append("<div class=\"timeSlot btn btn-danger lecture\"> APSC " + Section00.Tuesday[0][0].code[n] + " </div>");
    n++;
  }
  else if(i>=34&&i<51 && (i%17)==Section00.Wednesday[0][0].index[n]){
  
-   $("#wednesdayFunday").append("<div class=\"timeSlot lecture\"> APSC " + Section00.Wednesday[0][0].code[n] + " </div>");
+   $("#wednesdayFunday").append("<div class=\"timeSlot btn btn-danger lecture\"> APSC " + Section00.Wednesday[0][0].code[n] + " </div>");
    n++;
  }
  else if(i>=51&&i<68 && (i%17)==Section00.Thursday[0][0].index[n]){
-   $("#thursdayFunday").append("<div class=\"timeSlot lecture\"> APSC " + Section00.Thursday[0][0].code[n] + " </div>");
+   $("#thursdayFunday").append("<div class=\"timeSlot btn btn-danger lecture\"> APSC " + Section00.Thursday[0][0].code[n] + " </div>");
    n++;
  }
  else if(i>=68&&i<85 && (i%17)==Section00.Friday[0][0].index[n]){
-   $("#fridayFunday").append("<div class=\"timeSlot lecture\"> APSC " + Section00.Friday[0][0].code[n] + " </div>");
+   $("#fridayFunday").append("<div class=\"timeSlot btn btn-danger lecture\"> APSC " + Section00.Friday[0][0].code[n] + " </div>");
    n++;
  }
  else if(i<17){
@@ -106,7 +106,7 @@ $("input[type='text']").keypress(function(event){
 });
 	
 	//Delete button function in the event list
-$("#list").on("click", ".delete", function(event){
+$("#list").on("click", "span", function(event){
 $(this).parent().fadeOut(500,function(){
 	$(this).remove();
 });
@@ -114,7 +114,7 @@ event.stopPropagation();
 });
 
   //Delete button function in the timetable
-$("#timetable").on("click", ".delete", function(event){
+$("#timetable").on("click", "span", function(event){
   $(this).parent().fadeOut(500,function(){
     $(this).remove();
   });
