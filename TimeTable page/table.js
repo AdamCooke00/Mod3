@@ -34,24 +34,24 @@ for(var i=0;i<85;i++){
  }
  if(i<17 && i==Section00.Monday[0][0].index[n]){
  
-     $("#mondayFunday").append("<div class=\"timeSlot btn btn-danger lecture\"> APSC " + Section00.Monday[0][0].code[n] + " </div>");
+     $("#mondayFunday").append("<div class=\"timeSlot btn btn-danger lecture\"> APSC " + Section00.Monday[0][0].code[n] + " " + Section00.Monday[0][0].type[n] + " </div>");
      n++;
  }  
  else if(i>=17 && i<34 && (i%17)==Section00.Tuesday[0][0].index[n]){
-   $("#tuesdayFunday").append("<div class=\"timeSlot btn btn-danger lecture\"> APSC " + Section00.Tuesday[0][0].code[n] + " </div>");
+   $("#tuesdayFunday").append("<div class=\"timeSlot btn btn-danger lecture\"> APSC " + Section00.Tuesday[0][0].code[n] + " " + Section00.Tuesday[0][0].type[n] + " </div>");
    n++;
  }
  else if(i>=34&&i<51 && (i%17)==Section00.Wednesday[0][0].index[n]){
  
-   $("#wednesdayFunday").append("<div class=\"timeSlot btn btn-danger lecture\"> APSC " + Section00.Wednesday[0][0].code[n] + " </div>");
+   $("#wednesdayFunday").append("<div class=\"timeSlot btn btn-danger lecture\"> APSC " + Section00.Wednesday[0][0].code[n] + " " + Section00.Wednesday[0][0].type[n] +  " </div>");
    n++;
  }
  else if(i>=51&&i<68 && (i%17)==Section00.Thursday[0][0].index[n]){
-   $("#thursdayFunday").append("<div class=\"timeSlot btn btn-danger lecture\"> APSC " + Section00.Thursday[0][0].code[n] + " </div>");
+   $("#thursdayFunday").append("<div class=\"timeSlot btn btn-danger lecture\"> APSC " + Section00.Thursday[0][0].code[n] + " " + Section00.Thursday[0][0].type[n] + " </div>");
    n++;
  }
  else if(i>=68&&i<85 && (i%17)==Section00.Friday[0][0].index[n]){
-   $("#fridayFunday").append("<div class=\"timeSlot btn btn-danger lecture\"> APSC " + Section00.Friday[0][0].code[n] + " </div>");
+   $("#fridayFunday").append("<div class=\"timeSlot btn btn-danger lecture\"> APSC " + Section00.Friday[0][0].code[n] + " " + Section00.Friday[0][0].type[n] + " </div>");
    n++;
  }
  else if(i<17){
