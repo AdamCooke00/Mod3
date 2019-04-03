@@ -135,7 +135,7 @@
 #dateScroll{
     width: 79%;
     height: 30px;
-    background-color: cadetblue;
+    background-color: #A8A8A8;
     position: fixed;
     z-index: 5;
 }
@@ -145,7 +145,7 @@
 }
 
 #timeColumn{
-    background-color: gray;
+    background-color: #A8A8A8;
 }
 /*
 
