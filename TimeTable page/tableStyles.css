@@ -33,7 +33,7 @@
     /* Yellow */
     /* background: #FBEF6F;*/
     /* Grey border */
-    border: 2px solid #A8A8A8;
+    border: 1px solid #d3d3d3;
     /* height and width are equal, dependent on sidebar width. For sidebar of 10%, 5vw. font size is half. */
     height: 3.5vw;
     width: 3.5vw;
