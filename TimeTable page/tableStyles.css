@@ -241,3 +241,38 @@ span{
     border: 1px solid #D3D3D3;
     margin: 0;
 } */
+
+/* PRIMARY: Ready-made drag-and-drop buttons (laundry, study, gym) */
+.btn-primary {
+    background-color: #57005E;
+    border: purple;
+}
+.btn-primary:hover {
+    background-color: rgba(87,0,94,0.8);
+    /* lighter version of same purple colour */
+}
+
+/* Preloaded class blocks (tutorials, labs, lectures) */
+.lecture {
+    background-color: #FFD800;
+    display: inline-block;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    /* line-height: 1.42857143; */
+    line-height: 3rem;
+    /* fills cell */
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid orange;
+    border-radius: 4px;
+}
