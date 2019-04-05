@@ -274,12 +274,27 @@ span{
 } */
 
 /* PRIMARY: Ready-made drag-and-drop buttons (laundry, study, gym) */
-.btn-primary {
+.add {
+    border-radius: 4px;
+    color: white;
+}
+
+.ready {
     background-color: #57005E;
     border: purple;
+    border: 1px solid rgb(71, 0, 75);
 }
-.btn-primary:hover {
+.ready:hover {
     background-color: rgba(87,0,94,0.8);
+    /* lighter version of same purple colour */
+}
+
+.custom {
+    background-color: #353535;
+    border: 1px solid #151515;
+}
+.custom:hover {
+    background-color: #555555;
     /* lighter version of same purple colour */
 }
 
