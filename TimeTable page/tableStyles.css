@@ -4,8 +4,6 @@ html, body {
 }
 
 
-
-
 /* SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR
 (same for all pages) */
 #allNumbers {
@@ -99,6 +97,11 @@ html, body {
     float: left;
     color: black;
     text-decoration: none;
+}
+
+#export:hover {
+    background: url("https://static.thenounproject.com/png/96550-200.png");
+    background-image: radial-gradient(circle, #777777, #D8D8D8);
 }
 
 .disabled {
