@@ -100,6 +100,7 @@ html, body {
 }
 
 #export:hover {
+    color: transparent;
     background: url("https://static.thenounproject.com/png/96550-200.png");
     background-image: radial-gradient(circle, #777777, #D8D8D8);
 }

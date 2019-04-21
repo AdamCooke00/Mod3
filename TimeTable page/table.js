@@ -165,6 +165,14 @@ $("#timetable").on("click", "span", function(event){
   }
 });
 
+$("document").ready(function(){
+  $("#export").hover(function(){
+    $("#export i").toggleClass('fas fa-file-download');
+})
+});
+
+
+$("#export").click(function(){alert("Windows: Open Snipping Tool\n                 or press PrtScr or Windows + Shift + S\n                 to save the screen capture to your clipboard\n\nMac: Command + Shift + 4 (Saved)\n         Command + Control + Shift + 4 (Copied)")});
 //Belows allows user to bring button back to task bar on the side
 
 // $(".origin").droppable({ accept: ".add", drop: function(event, ui) {
