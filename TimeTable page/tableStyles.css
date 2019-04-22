@@ -141,8 +141,11 @@ html, body {
     width: 80%;
     float: left;
     height: 100%;
-    overflow: scroll;
+<<<<<<< HEAD
+    /* overflow: scroll; */
     overflow-x: hidden;
+=======
+>>>>>>> bb46eebcef3aa20816a6821706e3a0815fa35de6
 }
 
 #numberingBar{
@@ -164,18 +167,18 @@ html, body {
 
 .timeSlot{
     width: 100%;
-    height: 3rem;
+    height: 2.4rem;
     border: 1px solid #d3d3d3;
 }
 
 .time{
     width: 100%;
-    height: 3rem;
+    height: 2.4rem;
     border: 1px solid #d3d3d3;
 }
 
 #dateScroll{
-    width: 79%;
+    width: 80%;
     height: 30px;
     /* background-color: #A8A8A8; */
     background-image: linear-gradient(#A8A8A8,#C8C8C8);
@@ -213,7 +216,7 @@ button{
     /* font-family: Roboto; */
     /* Replaced with montserrat */
     width: 100%;
-    height: 46px;
+    height: 2.4rem;
     color: black;
     position: relative;
 }
@@ -320,7 +323,7 @@ span{
     font-size: 14px;
     font-weight: normal;
     /* line-height: 1.42857143; */
-    line-height: 3rem;
+    line-height: 2.4rem;
     /* fills cell */
     text-align: center;
     white-space: nowrap;
